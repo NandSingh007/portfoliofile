@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="flex items-center space-x-3">
             <FaLink className="text-3xl text-gray-700 dark:text-gray-300" />
             <a
-              href="https://your-portfolio.com"
+              href="https://portfoliofile.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg underline text-gray-700 dark:text-gray-300"
