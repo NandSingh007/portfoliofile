@@ -30,7 +30,7 @@ const Project = () => {
         "A Ludo King platform with authentication and real-time features.",
       technologies: ["MongoDB", "Express", "React", "Node.js"],
       githubLink: "https://github.com/MaxwayInfo/DamanColorSecond.git",
-      liveDemo: "#",
+      liveDemo: "https://www.maxwayinfotech.com/game-development/",
       image: ludo
     },
     {
