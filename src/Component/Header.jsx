@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { Transition } from "@headlessui/react";
-import logo from "../Images/shu.png";
+import logo from "../Images/subhlogo.png";
 function Header() {
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ function Header() {
     <header className="relative flex items-center justify-between px-6 py-4 bg-gray-100 dark:bg-gray-900 font-poppins shadow-md">
       {/* Logo */}
       <div className="text-2xl font-extrabold text-gray-900 dark:text-white">
-        <img src={logo} alt="Logo" className="h-15 w-24" />
+        <img src={logo} alt="Logo" className="h-13 w-24" />
       </div>
 
       {/* Desktop Navigation */}

@@ -3,7 +3,9 @@ import img from "../Images/3333.jpeg";
 import ofc from "../Images/ofc.jpeg";
 import ofc5 from "../Images/ofc5.jpg";
 import img1 from "../Images/pr.png";
+import { FaUser } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import pdf from "../Images/SubhResume.pdf";
 import Header from "../Component/Header";
 import {
   FaLaptopCode,
@@ -56,7 +58,7 @@ const Home = () => {
               Contact Info
             </a>
             <a
-              href="/path-to-cv.pdf"
+              href={pdf}
               download
               className="px-8 py-3 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 ease-in-out"
             >
@@ -109,9 +111,22 @@ const Home = () => {
           {/* <h1 className="text-4xl font-bold text-gray-900 dark:text-white font-serif">
             About Me
           </h1> */}
-          <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+          <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 mr-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zm-8-5a5 5 0 00-4.5 2.57A7 7 0 019 11h2a7 7 0 015.5-5.57A5 5 0 0010 3zm1 8H9v4a1 1 0 001 1h2a1 1 0 001-1v-4z"
+                clipRule="evenodd"
+              />
+            </svg>
             About Me
           </h2>
+
           {/* About Me Introduction */}
           <p className="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
             Hi, I'm <span className="font-semibold">Shubham Singh</span>, a
