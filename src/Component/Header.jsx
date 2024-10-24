@@ -22,20 +22,20 @@ function Header() {
   };
 
   return (
-    <header className="relative flex items-center justify-between px-6 py-4 bg-gray-100 dark:bg-gray-900 font-poppins shadow-md">
+    <header className="relative flex items-center justify-between px-6 py-4 bg-gray-100 shadow-md dark:bg-gray-900 font-poppins">
       {/* Logo */}
       <div className="text-2xl font-extrabold text-gray-900 dark:text-white">
-        <img src={logo} alt="Logo" className="h-13 w-24" />
+        <img src={logo} alt="Logo" className="h-12 w-18" />
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-8 text-lg">
+      <nav className="hidden space-x-8 text-lg md:flex">
         {["About", "Experience", "Projects", "Contact", "Education"].map(
           (item, index) => (
             <a
               key={index}
               href={`#${item.toLowerCase().replace(" ", "")}`}
-              className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transform transition-all duration-300 hover:scale-105"
+              className="text-gray-800 transition-all duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-105"
             >
               {item}
             </a>
@@ -48,12 +48,12 @@ function Header() {
         {/* Dark/Light mode toggle icon */}
         <button
           onClick={toggleDarkMode}
-          className="focus:outline-none transform transition-all duration-300 hover:scale-110"
+          className="transition-all duration-300 transform focus:outline-none hover:scale-110"
         >
           {darkMode ? (
-            <FaSun className="text-yellow-400 text-2xl" />
+            <FaSun className="text-2xl text-yellow-400" />
           ) : (
-            <FaMoon className="text-gray-600 dark:text-gray-300 text-2xl" />
+            <FaMoon className="text-2xl text-gray-600 dark:text-gray-300" />
           )}
         </button>
 
@@ -61,7 +61,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="focus:outline-none text-2xl text-gray-800 dark:text-gray-200"
+            className="text-2xl text-gray-800 focus:outline-none dark:text-gray-200"
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -78,13 +78,13 @@ function Header() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-full"
       >
-        <nav className="absolute top-16 left-0 w-full bg-gray-100 dark:bg-gray-900 md:hidden flex flex-col items-center space-y-6 py-6">
+        <nav className="absolute left-0 flex flex-col items-center w-full py-6 space-y-6 bg-gray-100 top-16 dark:bg-gray-900 md:hidden">
           {["About", "Experience", "Projects", "Contact", "Education"].map(
             (item, index) => (
               <a
                 key={index}
                 href={`#${item.toLowerCase().replace(" ", "")}`}
-                className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transform transition-all duration-300 hover:scale-105"
+                className="text-gray-800 transition-all duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-105"
                 onClick={toggleMenu}
               >
                 {item}
