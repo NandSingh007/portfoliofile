@@ -18,14 +18,14 @@ const Project = () => {
     {
       title: "Resume Builder",
       description:
-        "A mobile-friendly Resume Builder site built with Real.js and Tailwind CSS.",
+        "A mobile-friendly Resume Builder site built with React.js and Tailwind CSS.",
       technologies: ["React.js", "Tailwind CSS", "MySQL"],
       githubLink: "https://github.com/NandSingh007/resumeBuilder.git",
       liveDemo: "https://nandsingh007.github.io/resumeBuilder/",
       image: resume
     },
     {
-      title: "ludo King",
+      title: "Ludo King",
       description:
         "A Ludo King platform with authentication and real-time features.",
       technologies: ["MongoDB", "Express", "React", "Node.js"],
@@ -45,50 +45,47 @@ const Project = () => {
 
   return (
     <section className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div className="container mx-auto px-4" id="projects">
-        {/* <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          My Projects
-        </h2> */}
-        <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+      <div className="container px-4 mx-auto" id="projects">
+        <h2 className="mb-12 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
           My Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+              className="relative overflow-hidden transition duration-500 transform bg-white rounded-lg shadow-lg dark:bg-gray-800 hover:scale-105 hover:shadow-2xl"
             >
               <div className="relative h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                  className="object-cover w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 hover:opacity-80 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 transition-opacity duration-500 opacity-0 bg-gradient-to-t from-black via-transparent to-transparent hover:opacity-80"></div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="mb-4 text-gray-700 dark:text-gray-300">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap mb-4">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-sm font-medium bg-blue-100 text-blue-600 rounded-full px-2 py-1 mr-2 mb-2 dark:bg-blue-700 dark:text-blue-200"
+                      className="px-2 py-1 mb-2 mr-2 text-sm font-medium text-blue-600 bg-blue-100 rounded-full dark:bg-blue-700 dark:text-blue-200"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <a
                     href={project.githubLink}
-                    className="flex items-center text-blue-500 hover:text-blue-700"
+                    className="flex items-center text-blue-500 transition-colors duration-200 hover:text-blue-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -96,7 +93,7 @@ const Project = () => {
                   </a>
                   <a
                     href={project.liveDemo}
-                    className="flex items-center text-blue-500 hover:text-blue-700"
+                    className="flex items-center text-blue-500 transition-colors duration-200 hover:text-blue-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

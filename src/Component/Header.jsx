@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { Transition } from "@headlessui/react";
 import logo from "../Images/subhlogo.png";
+import openSound from "../Images/open.mp3";
+import closeSound from "../Images/open.mp3";
 function Header() {
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,9 +18,11 @@ function Header() {
     }
   };
 
-  // Toggle mobile menu
+  // Toggle menu items with sound effect
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    const sound = new Audio(isMenuOpen ? closeSound : openSound);
+    sound.play();
   };
 
   return (
@@ -28,24 +32,36 @@ function Header() {
         <img src={logo} alt="Logo" className="h-12 w-18" />
       </div>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden space-x-8 text-lg md:flex">
-        {["About", "Experience", "Projects", "Contact", "Education"].map(
-          (item, index) => (
-            <a
-              key={index}
-              href={`#${item.toLowerCase().replace(" ", "")}`}
-              className="text-gray-800 transition-all duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-105"
-            >
-              {item}
-            </a>
-          )
-        )}
-      </nav>
+      {/* Centered Menu Items for Desktop */}
+      <div className="hidden mx-auto space-x-6 text-lg font-semibold md:flex">
+        <Transition
+          show={isMenuOpen}
+          enter="transition ease-out duration-300"
+          enterFrom="opacity-0 transform -translate-y-2"
+          enterTo="opacity-100 transform translate-y-0"
+          leave="transition ease-in duration-200"
+          leaveFrom="opacity-100 transform translate-y-0"
+          leaveTo="opacity-0 transform -translate-y-2"
+        >
+          <div className="flex space-x-6">
+            {["About", "Experience", "Projects", "Contact", "Education"].map(
+              (item, index) => (
+                <a
+                  key={index}
+                  href={`#${item.toLowerCase().replace(" ", "")}`}
+                  className="text-gray-800 transition-all duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+                >
+                  {item}
+                </a>
+              )
+            )}
+          </div>
+        </Transition>
+      </div>
 
-      {/* Right side: Dark/Light mode toggle and Mobile Menu */}
+      {/* Right Side: Dark Mode and Toggle Button */}
       <div className="flex items-center space-x-6">
-        {/* Dark/Light mode toggle icon */}
+        {/* Dark/Light mode toggle */}
         <button
           onClick={toggleDarkMode}
           className="transition-all duration-300 transform focus:outline-none hover:scale-110"
@@ -57,41 +73,42 @@ function Header() {
           )}
         </button>
 
-        {/* Mobile Menu Toggle Button */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-2xl text-gray-800 focus:outline-none dark:text-gray-200"
-          >
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
+        {/* Dashboard Toggle Button */}
+        <button
+          onClick={toggleMenu}
+          className="text-2xl text-gray-800 focus:outline-none dark:text-gray-200"
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile View Sidebar for Menu Items */}
       <Transition
         show={isMenuOpen}
         enter="transition ease-out duration-300 transform"
-        enterFrom="opacity-0 -translate-y-full"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in duration-300 transform"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 -translate-y-full"
+        enterFrom="-translate-y-full"
+        enterTo="translate-y-0"
+        leave="transition ease-in duration-200 transform"
+        leaveFrom="translate-y-0"
+        leaveTo="-translate-y-full"
       >
-        <nav className="absolute left-0 flex flex-col items-center w-full py-6 space-y-6 bg-gray-100 top-16 dark:bg-gray-900 md:hidden">
+        <div
+          className={`absolute top-full left-0 w-full bg-gray-100 dark:bg-gray-900 flex flex-col items-center space-y-4 py-4 z-[100000] ${
+            isMenuOpen ? "block" : "hidden"
+          } md:hidden`}
+        >
           {["About", "Experience", "Projects", "Contact", "Education"].map(
             (item, index) => (
               <a
                 key={index}
                 href={`#${item.toLowerCase().replace(" ", "")}`}
-                className="text-gray-800 transition-all duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-105"
-                onClick={toggleMenu}
+                className="text-lg font-semibold text-gray-800 transition-all duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
               >
                 {item}
               </a>
             )
           )}
-        </nav>
+        </div>
       </Transition>
     </header>
   );

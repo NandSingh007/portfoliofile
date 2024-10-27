@@ -22,7 +22,6 @@ import {
 
 const Language = () => {
   const skills = [
-    // Frontend Skills
     {
       category: "Frontend",
       items: [
@@ -58,7 +57,6 @@ const Language = () => {
         }
       ]
     },
-    // Backend Skills
     {
       category: "Backend",
       items: [
@@ -89,7 +87,6 @@ const Language = () => {
         }
       ]
     },
-    // DevOps & Hosting
     {
       category: "DevOps & Hosting",
       items: [
@@ -123,35 +120,36 @@ const Language = () => {
   ];
 
   return (
-    <section className="py-10 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200">
-      <div className="container mx-auto px-4">
-        {/* <h2 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
-          My Knowledge
-        </h2> */}
-        <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+    <section className="py-10 text-gray-800 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 dark:text-gray-200">
+      <div className="container px-4 mx-auto md:px-8 lg:px-16">
+        <h2 className="mb-12 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
           My Knowledge
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {skills.map((skillCategory) => (
             <div
               key={skillCategory.category}
-              className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="p-6 transition-all duration-300 ease-in-out transform bg-white rounded-lg shadow-lg dark:bg-gray-800 hover:scale-105 hover:shadow-2xl"
             >
-              <h3 className="text-2xl font-semibold mb-4 text-center text-gray-700 dark:text-gray-200 border-b pb-2 border-gray-300 dark:border-gray-600">
+              <h3 className="px-4 py-2 mb-6 text-3xl font-semibold text-center text-transparent transition duration-300 ease-in-out transform rounded-full shadow-md md:text-4xl bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-600 hover:scale-110">
                 {skillCategory.category}
               </h3>
               <ul className="space-y-4">
                 {skillCategory.items.map((skill) => (
                   <li
                     key={skill.name}
-                    className="flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-700 rounded-md shadow-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-all"
+                    className="flex items-center justify-between p-3 transition-all duration-300 transform rounded-md shadow-md bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600 dark:hover:from-blue-900 dark:hover:to-blue-700"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="text-2xl">{skill.icon}</div>
-                      <span className="text-lg font-medium">{skill.name}</span>
+                      <div className="text-2xl transition-transform duration-500 transform hover:rotate-12">
+                        {skill.icon}
+                      </div>
+                      <span className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                        {skill.name}
+                      </span>
                     </div>
-                    <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-2 py-1 rounded-lg">
+                    <span className="px-2 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-lg dark:bg-blue-900 dark:text-blue-300">
                       {skill.level}
                     </span>
                   </li>

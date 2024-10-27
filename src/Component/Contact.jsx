@@ -10,58 +10,55 @@ import {
 
 const Contact = () => {
   return (
-    <section className="relative bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-      <div
-        className="container mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-10"
-        id="contact"
-      >
-        {/* <h2 className="text-5xl font-serif text-center mb-10 drop-shadow-md">
-          Connect with Me
-        </h2> */}
-        <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+    <section
+      className="relative py-12 text-gray-800 bg-gray-100 dark:bg-gray-900 dark:text-gray-200"
+      id="contact"
+    >
+      <div className="container p-10 px-4 mx-auto bg-white rounded-lg shadow-xl lg:px-8 dark:bg-gray-800">
+        <h2 className="mb-12 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
           Connect with Me
         </h2>
 
         {/* Contact Info Section */}
-        <div className="flex flex-col items-center mb-10 space-y-6">
+        <div className="grid grid-cols-1 gap-6 mb-10 md:grid-cols-2">
           {/* Phone */}
-          <div className="flex items-center space-x-3">
-            <FaPhone className="text-3xl text-green-600" />
+          <div className="flex items-center p-6 space-x-4 text-white transition-transform transform rounded-lg shadow-md bg-gradient-to-r from-green-500 to-green-400 hover:scale-105">
+            <FaPhone className="text-4xl" />
             <p className="text-lg">9653984956</p>
           </div>
 
           {/* Email */}
-          <div className="flex items-center space-x-3">
-            <FaEnvelope className="text-3xl text-red-600" />
+          <div className="flex items-center p-6 space-x-4 text-white transition-transform transform rounded-lg shadow-md bg-gradient-to-r from-red-500 to-red-400 hover:scale-105">
+            <FaEnvelope className="text-4xl" />
             <a
-              href="mailto:your.email@example.com"
-              className="text-lg underline text-gray-700 dark:text-gray-300"
+              href="mailto:shubham.srathore07@gmail.com"
+              className="text-lg underline"
             >
               shubham.srathore07@gmail.com
             </a>
           </div>
 
           {/* LinkedIn */}
-          <div className="flex items-center space-x-3">
-            <FaLinkedin className="text-3xl text-blue-700" />
+          <div className="flex items-center p-6 space-x-4 text-white transition-transform transform rounded-lg shadow-md bg-gradient-to-r from-blue-700 to-blue-600 hover:scale-105">
+            <FaLinkedin className="text-4xl" />
             <a
               href="https://linkedin.com/in/your-linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg underline text-blue-700"
+              className="text-lg underline"
             >
               LinkedIn Profile
             </a>
           </div>
 
           {/* Portfolio */}
-          <div className="flex items-center space-x-3">
-            <FaLink className="text-3xl text-gray-700 dark:text-gray-300" />
+          <div className="flex items-center p-6 space-x-4 text-white transition-transform transform rounded-lg shadow-md bg-gradient-to-r from-gray-600 to-gray-500 hover:scale-105">
+            <FaLink className="text-4xl" />
             <a
               href="https://portfoliofile.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg underline text-gray-700 dark:text-gray-300"
+              className="text-lg underline"
             >
               My Portfolio
             </a>
@@ -69,14 +66,14 @@ const Contact = () => {
         </div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center space-x-12 mt-10">
+        <div className="flex justify-center mt-10 space-x-10">
           <a
-            href="linkedin.com/in/shubham-singh-79a715219"
+            href="https://linkedin.com/in/shubham-singh-79a715219"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"
           >
-            <FaLinkedin className="text-5xl text-blue-700" />
+            <FaLinkedin className="text-5xl text-blue-700 transition-colors duration-300 hover:text-blue-500" />
           </a>
           <a
             href="https://github.com/NandSingh007"
@@ -84,7 +81,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"
           >
-            <FaGithub className="text-5xl text-gray-900 dark:text-white" />
+            <FaGithub className="text-5xl text-gray-900 transition-colors duration-300 dark:text-white hover:text-gray-700" />
           </a>
           <a
             href="https://instagram.com"
@@ -92,23 +89,10 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"
           >
-            <FaInstagram className="text-5xl text-pink-600" />
+            <FaInstagram className="text-5xl text-pink-600 transition-colors duration-300 hover:text-pink-400" />
           </a>
         </div>
       </div>
-
-      {/* Custom Styles */}
-      <style jsx>{`
-        h2 {
-          font-family: "Georgia", serif;
-        }
-        .fab {
-          transition: color 0.3s ease;
-        }
-        .fab:hover {
-          color: #f0c040;
-        }
-      `}</style>
     </section>
   );
 };

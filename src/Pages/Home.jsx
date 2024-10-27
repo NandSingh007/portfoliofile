@@ -3,6 +3,7 @@ import img from "../Images/3333.jpeg";
 import ofc from "../Images/ofc.jpeg";
 import ofc5 from "../Images/ofc5.jpg";
 import img1 from "../Images/pr.png";
+import "./Home.css";
 import { FaUser } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import pdf from "../Images/SubhResume.pdf";
@@ -25,54 +26,60 @@ const Home = () => {
     <>
       <Header />
 
-      {/* First Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-200 dark:from-gray-900 dark:to-gray-800 p-10">
-        {/* Left Side - Image */}
-        <div className="flex justify-center items-center w-full mb-6 md:mb-0 md:w-1/2">
+      <section className="relative flex flex-col items-center justify-center min-h-screen p-10 overflow-hidden md:flex-row bg-gradient-to-r from-blue-200 to-purple-300 dark:from-gray-800 dark:to-gray-900">
+        {/* Background Pulsing Animation */}
+        <div className="absolute inset-0 transform scale-150 bg-blue-400 rounded-full opacity-40 animate-pulse-slow" />
+
+        {/* Animated Ring Around Image */}
+        <div className="absolute rounded-full w-96 h-96 bg-gradient-to-r from-pink-500 to-purple-500 animate-spin-slow opacity-30 blur-xl" />
+
+        {/* Left Side - Profile Image with Hover Effect */}
+        <div className="relative flex items-center justify-center w-full mb-6 md:mb-0 md:w-1/2">
           <img
             src={img1}
             alt="User"
-            className="rounded-full shadow-lg w-96 h-96 md:w-112 md:h-112 object-cover transform hover:scale-110 transition-transform duration-500 ease-in-out"
+            className="relative object-cover transition-transform duration-500 ease-in-out transform rounded-full shadow-lg w-80 h-80 md:w-96 md:h-96 hover:scale-110 animate-fade-in"
           />
         </div>
 
         {/* Right Side - Text and Buttons */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
-            Hi, I'm <span className="text-blue-500">Shubham Singh</span>
+        <div className="flex flex-col items-center w-full space-y-6 text-center md:items-start md:text-left md:w-1/2 animate-fade-in">
+          <h1 className="text-5xl font-bold text-gray-900 transition-transform duration-500 ease-out transform dark:text-white hover:scale-105">
+            Hi, I'm{" "}
+            <span className="text-gradient-animated">Shubham Singh</span>
           </h1>
-          <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-300">
+          <p className="text-lg text-gray-800 md:text-2xl dark:text-gray-300">
             I am a{" "}
-            <span className="font-semibold text-purple-600">
+            <span className="font-semibold text-gradient">
               MERN Stack Developer
             </span>
             .
           </p>
 
-          {/* Buttons for Contact Info and Download CV */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
+          {/* Buttons with Glow and Shadow */}
+          <div className="flex flex-col mt-6 space-y-4 md:flex-row md:space-y-0 md:space-x-4 animate-slide-in">
             <a
               href="#contact"
-              className="px-8 py-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 ease-in-out"
+              className="px-8 py-3 text-white transition-all duration-300 ease-in-out transform bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 hover:shadow-2xl"
             >
               Contact Info
             </a>
             <a
               href={pdf}
               download
-              className="px-8 py-3 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 ease-in-out"
+              className="px-8 py-3 text-white transition-all duration-300 ease-in-out transform bg-purple-500 rounded-full shadow-lg hover:bg-purple-600 hover:scale-105 hover:shadow-2xl"
             >
               Download CV
             </a>
           </div>
 
           {/* Social Icons */}
-          <div className="flex space-x-6 mt-8">
+          <div className="flex mt-8 space-x-6 animate-fade-in">
             <a
-              href="linkedin.com/in/shubham-singh-79a715219"
+              href="https://linkedin.com/in/shubham-singh-79a715219"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 text-4xl transition-all duration-300 ease-in-out"
+              className="text-4xl text-gray-700 transition-all duration-300 ease-in-out transform dark:text-gray-300 hover:text-blue-600 hover:scale-110"
             >
               <FaLinkedin />
             </a>
@@ -80,7 +87,7 @@ const Home = () => {
               href="https://github.com/NandSingh007"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-4xl transition-all duration-300 ease-in-out"
+              className="text-4xl text-gray-700 transition-all duration-300 ease-in-out transform dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:scale-110"
             >
               <FaGithub />
             </a>
@@ -89,38 +96,35 @@ const Home = () => {
       </section>
 
       {/* Second Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-10 font-sans">
+      <section className="flex flex-col items-center justify-center min-h-screen p-10 font-sans md:flex-row bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
         {/* Left Side - Unique Shape Image */}
-        <div className="flex justify-center items-center w-full mb-6 md:mb-0 relative md:w-1/2">
-          <div className="relative w-80 h-80 md:w-146 md:h-110">
+        <div className="relative flex items-center justify-center w-full mb-6 md:mb-0 md:w-1/2">
+          <div className="relative w-80 h-80 md:w-96 md:h-96">
             {/* Background Circle for Unique Shape */}
-            <div className="w-96 h-96 rounded-full bg-gray-300 opacity-20 absolute -bottom-20 -left-20 z-0"></div>
+            <div className="absolute z-0 bg-gray-300 rounded-full w-96 h-96 opacity-20 -bottom-20 -left-20 animate-pulse"></div>
             <img
               src={img}
               alt="User"
-              className="rounded-lg shadow-lg w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 ease-in-out z-10"
+              className="z-10 object-cover w-full h-full transition-transform duration-500 ease-in-out transform rounded-lg shadow-lg hover:scale-105"
             />
           </div>
         </div>
 
         {/* Right Side - About Me Content */}
         <div
-          className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2 space-y-6"
+          className="flex flex-col items-center w-full space-y-6 text-center md:items-start md:text-left md:w-1/2"
           id="about"
         >
-          {/* <h1 className="text-4xl font-bold text-gray-900 dark:text-white font-serif">
-            About Me
-          </h1> */}
-          <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg flex items-center justify-center">
+          <h2 className="flex items-center justify-center mb-12 text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 mr-4"
+              className="w-10 h-10 mr-4"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path
                 fillRule="evenodd"
-                d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zm-8-5a5 5 0 00-4.5 2.57A7 7 0 019 11h2a7 7 0 015.5-5.57A5 5 0 0010 3zm1 8H9v4a1 1 0 001 1h2a1 1 0 001-1v-4z"
+                d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zm-8-5a5 5 0 00-4.5 2.57A7 7 0 009 11h2a7 7 0 015.5-5.57A5 5 0 0010 3zm1 8H9v4a1 1 0 001 1h2a1 1 0 001-1v-4z"
                 clipRule="evenodd"
               />
             </svg>
@@ -128,7 +132,7 @@ const Home = () => {
           </h2>
 
           {/* About Me Introduction */}
-          <p className="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+          <p className="text-lg font-light leading-relaxed text-gray-700 dark:text-gray-300">
             Hi, I'm <span className="font-semibold">Shubham Singh</span>, a
             passionate web developer with expertise in MERN stack and a strong
             foundation in JavaScript. I have over 2 years of experience in
@@ -137,43 +141,46 @@ const Home = () => {
 
           {/* Technical Skills */}
           <div>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
               Technical Skills
             </h2>
-            <ul className="list-none space-y-3 text-gray-700 dark:text-gray-300 text-lg">
+            <ul className="space-y-3 text-lg text-gray-700 list-none dark:text-gray-300">
               <li className="flex items-center">
                 <FaLaptopCode className="mr-2 text-blue-500" />
-                MERN Stack Developer (MongoDB, Express.js, React.js, Node.js)
+                <span className="font-semibold">MERN Stack Developer</span>{" "}
+                (MongoDB, Express.js, React.js, Node.js)
               </li>
               <li className="flex items-center">
                 <FaJs className="mr-2 text-yellow-500" />
-                Core language: JavaScript (ES6+)
+                <span className="font-semibold">Core language:</span> JavaScript
+                (ES6+)
               </li>
               <li className="flex items-center">
                 <FaReact className="mr-2 text-cyan-500" />
-                Familiar with Next.js for server-side rendering and building
-                SEO-friendly websites
+                <span className="font-semibold">Familiar with:</span> Next.js
+                for server-side rendering and building SEO-friendly websites
               </li>
               <li className="flex items-center">
                 <FaServer className="mr-2 text-green-500" />
-                Backend expertise in Node.js and Express.js
+                <span className="font-semibold">Backend expertise:</span>{" "}
+                Node.js and Express.js
               </li>
               <li className="flex items-center">
                 <FaDatabase className="mr-2 text-purple-500" />
-                Database management using MongoDB and MySQL
+                <span className="font-semibold">Database management:</span>{" "}
+                MongoDB and MySQL
               </li>
             </ul>
           </div>
 
           {/* Additional Info */}
-          <p className="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+          <p className="text-lg font-light leading-relaxed text-gray-700 dark:text-gray-300">
             My goal is to create intuitive, scalable, and high-performance web
             applications that enhance user experiences and drive business
             outcomes.
           </p>
         </div>
       </section>
-
       <section
         className="relative py-40 text-gray-800 bg-fixed"
         style={{
@@ -181,103 +188,85 @@ const Home = () => {
             "url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed" // Keep the background fixed during scroll
+          backgroundAttachment: "fixed"
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         {/* Optional Overlay */}
         <div
-          className="container mx-auto bg-white bg-opacity-80 rounded-lg p-10 relative z-10"
+          className="container relative z-10 p-10 mx-auto bg-white rounded-lg shadow-lg"
           id="education"
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }} // Light background for inner div
         >
-          {/* <h2 className="text-5xl font-serif text-center mb-10 drop-shadow-md">
-            My Education Journey
-          </h2> */}
-          <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+          <h2 className="mb-12 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
             My Education Journey
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* 1st Box */}
-            <div className="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-110 hover:shadow-2xl animate-fade-in">
-              <div className="flex justify-center mb-4">
-                <i className="fas fa-user-graduate text-6xl text-blue-600 transition-transform transform hover:rotate-12"></i>
+          <div className="flex flex-wrap justify-center gap-8">
+            {/* Educational Cards */}
+            {[
+              {
+                title: "10th Grade",
+                board: "Rajasthan Board of Secondary Education",
+                year: 2015,
+                percentage: "81%",
+                icon: "fa-user-graduate"
+              },
+              {
+                title: "12th Grade",
+                board: "Rajasthan Board of Secondary Education",
+                year: 2017,
+                percentage: "80% in PCM",
+                icon: "fa-user-graduate"
+              },
+              {
+                title: "Bachelor's Degree in B.Tech (Civil)",
+                year: 2021,
+                percentage: "71%",
+                icon: "fa-university"
+              },
+              {
+                title: "Master's Degree in M.Sc. (Computer Science)",
+                year: 2024,
+                percentage: "75%",
+                icon: "fa-graduation-cap"
+              }
+            ].map((education, index) => (
+              <div
+                key={index}
+                className="relative p-6 transition-transform transform bg-white rounded-lg shadow-md w-80 hover:scale-105 hover:shadow-xl animate-fade-in"
+              >
+                <div className="flex justify-center mb-4">
+                  <i
+                    className={`text-6xl text-blue-600 transition-transform transform fas ${education.icon} hover:rotate-12`}
+                  ></i>
+                </div>
+                <h3 className="mb-2 text-2xl font-bold text-center text-gray-800">
+                  {education.title}
+                </h3>
+                {education.board && (
+                  <p className="text-lg font-semibold text-center text-gray-800">
+                    Board:{" "}
+                    <span className="font-normal text-gray-600">
+                      {education.board}
+                    </span>
+                  </p>
+                )}
+                <p className="text-lg font-semibold text-center text-gray-800">
+                  Passout Year:{" "}
+                  <span className="font-normal text-gray-600">
+                    {education.year}
+                  </span>
+                </p>
+                <p className="text-lg font-semibold text-center text-gray-800">
+                  Percentage:{" "}
+                  <span className="font-normal text-gray-600">
+                    {education.percentage}
+                  </span>
+                </p>
+                {/* Bottom Border */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-500"></div>
               </div>
-              <h3 className="text-2xl font-serif font-bold mb-2">10th Grade</h3>
-              <p className="text-gray-800 text-lg font-semibold">
-                Board:{" "}
-                <span className="font-normal text-gray-600">
-                  Rajasthan Board of Secondary Education
-                </span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Passout Year:{" "}
-                <span className="font-normal text-gray-600">2015</span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Percentage:{" "}
-                <span className="font-normal text-gray-600">81%</span>
-              </p>
-            </div>
-
-            {/* 2nd Box */}
-            <div className="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-110 hover:shadow-2xl animate-fade-in">
-              <div className="flex justify-center mb-4">
-                <i className="fas fa-user-graduate text-6xl text-blue-600 transition-transform transform hover:rotate-12"></i>
-              </div>
-              <h3 className="text-2xl font-serif font-bold mb-2">12th Grade</h3>
-
-              <p className="text-gray-800 text-lg font-semibold">
-                Board:{" "}
-                <span className="font-normal text-gray-600">
-                  Rajasthan Board of Secondary Education
-                </span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Passout Year:{" "}
-                <span className="font-normal text-gray-600">2017</span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Percentage in PCM:{" "}
-                <span className="font-normal text-gray-600">80%</span>
-              </p>
-            </div>
-
-            {/* 3rd Box */}
-            <div className="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-110 hover:shadow-2xl animate-fade-in">
-              <div className="flex justify-center mb-4">
-                <i className="fas fa-university text-5xl text-blue-600 transition-transform transform hover:rotate-12"></i>
-              </div>
-              <h3 className="text-2xl font-serif font-bold mb-2">
-                Bachelor's Degree in B.Tech (Civil)
-              </h3>
-              <p className="text-gray-800 text-lg font-semibold">
-                Passout Year:{" "}
-                <span className="font-normal text-gray-600">2021</span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Percentage
-                <span className="font-normal text-gray-600">71%</span>
-              </p>
-              {/* <p className="text-gray-600">Percentage: 71%</p> */}
-            </div>
-
-            {/* 4th Box */}
-            <div className="bg-white border-2 border-gray-300 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-110 hover:shadow-2xl animate-fade-in">
-              <div className="flex justify-center mb-4">
-                <i className="fas fa-graduation-cap text-5xl text-blue-600 transition-transform transform hover:rotate-12"></i>
-              </div>
-              <h3 className="text-2xl font-serif font-bold mb-2">
-                Master's Degree in M.Sc. (Computer Science)
-              </h3>
-              <p className="text-gray-800 text-lg font-semibold">
-                Passout Year:{" "}
-                <span className="font-normal text-gray-600">2024</span>
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Percentage
-                <span className="font-normal text-gray-600">75%</span>
-              </p>
-            </div>
+            ))}
           </div>
         </div>
         {/* CSS Styles for Animation and Design */}
@@ -302,61 +291,52 @@ const Home = () => {
               transform: translateY(0);
             }
           }
-
-          .hover\\:scale-110:hover {
-            transform: scale(1.1);
-          }
-
-          .hover\\:shadow-2xl:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-          }
         `}</style>
       </section>
 
       <section
         className="relative py-20 text-gray-800 dark:text-gray-200"
         style={{
-          backgroundImage: "url('/path/to/your/background-image.jpg')", // Adjust the path to your background image
+          backgroundImage: "url('/path/to/your/background-image.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
         }}
       >
-        {/* Light overlay to soften the background image */}
-        <div className="absolute inset-0 bg-white dark:bg-gray-900 opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 opacity-70"></div>
 
         <div
-          className="container relative mx-auto bg-yellow-100 dark:bg-yellow-700 bg-opacity-90 rounded-lg p-10 shadow-lg"
+          className="container relative p-10 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-900 bg-opacity-95"
           id="experience"
         >
-          <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
+          <h2 className="mb-12 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 drop-shadow-lg">
             My Work Experience
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="flex flex-col items-stretch justify-center gap-10 md:flex-row">
             {/* AlmaBetter Experience */}
             <div
-              className="relative bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105 hover:shadow-2xl"
+              className="relative flex-1 p-8 transition duration-300 border-4 border-blue-500 rounded-lg shadow-lg bg-gradient-to-br from-indigo-200 via-blue-100 to-teal-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 hover:border-indigo-500"
               style={{
-                minHeight: "400px", // Using minHeight instead of fixed height
+                minHeight: "420px",
                 backgroundImage: `url(${ofc5})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center"
               }}
             >
-              {/* Profile Image */}
               <img
                 src={img1}
                 alt="Your second profile"
-                className="absolute top-6 left-6 w-20 h-20 rounded-full border-4 border-white"
+                className="absolute w-16 h-16 border-4 border-white rounded-full top-6 left-6"
               />
-
-              <div className="relative z-10 text-white mt-32 p-6 bg-black bg-opacity-50 rounded-lg">
-                <h3 className="text-3xl font-serif font-bold mb-4">
+              <div className="relative z-10 p-6 mt-24 text-black bg-white rounded-lg dark:text-white dark:bg-black bg-opacity-80">
+                <h3 className="mb-4 font-serif text-3xl font-bold transition-all duration-300 hover:text-blue-500 hover:underline">
                   Full Stack Developer Training at AlmaBetter
                 </h3>
-                <p className="text-lg mb-2">Duration: Jan 2022 - Dec 2023</p>
-                <p className="text-lg">
+                <p className="mb-2 text-lg transition-all duration-300 hover:text-blue-500">
+                  Duration: Jan 2022 - Dec 2023
+                </p>
+                <p className="text-lg transition-all duration-300 hover:text-blue-500">
                   Responsibilities: Comprehensive full-stack development
                   training, working with MERN stack projects, and building
                   responsive applications.
@@ -366,28 +346,27 @@ const Home = () => {
 
             {/* Maxway Infotech Experience */}
             <div
-              className="relative bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-6 transition-transform transform hover:scale-105 hover:shadow-2xl"
+              className="relative flex-1 p-8 transition duration-300 border-4 border-blue-500 rounded-lg shadow-lg bg-gradient-to-br from-green-200 via-teal-100 to-yellow-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 hover:border-indigo-500"
               style={{
-                minHeight: "400px", // Using minHeight instead of fixed height
+                minHeight: "420px",
                 backgroundImage: `url(${ofc})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center"
               }}
             >
-              {/* Profile Image */}
-
               <img
                 src={img1}
                 alt="Your portrait"
-                className="absolute top-6 left-6 w-20 h-20 rounded-full border-4 border-white"
+                className="absolute w-16 h-16 border-4 border-white rounded-full top-6 left-6"
               />
-
-              <div className="relative z-10 text-white mt-32 p-6 bg-black bg-opacity-50 rounded-lg">
-                <h3 className="text-3xl font-serif font-bold mb-4">
+              <div className="relative z-10 p-6 mt-24 text-black bg-white rounded-lg dark:text-white dark:bg-black bg-opacity-80">
+                <h3 className="mb-4 font-serif text-3xl font-bold transition-all duration-300 hover:text-blue-500 hover:underline">
                   Full Stack Developer at Maxway Infotech Pvt. Ltd.
                 </h3>
-                <p className="text-lg mb-2">Duration: May 2023 - Present</p>
-                <p className="text-lg">
+                <p className="mb-2 text-lg transition-all duration-300 hover:text-blue-500">
+                  Duration: May 2023 - Present
+                </p>
+                <p className="text-lg transition-all duration-300 hover:text-blue-500">
                   Responsibilities: Developing end-to-end full-stack web
                   applications, maintaining client projects, and collaborating
                   with teams to deliver optimized solutions.
